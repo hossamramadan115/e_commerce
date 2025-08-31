@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
           await SharedPreferencesHelper().saveUserImage(userData["image"]);
         }
 
-        if (!mounted) return; // تأكيد قبل استخدام context
+        if (!mounted) return; 
         showSuccessSnack(context, "Welcome back 👋");
         GoRouter.of(context).push(AppRouter.kBottombar);
       }
@@ -88,7 +88,6 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // الصورة الأولى تاخد جزء مرن
                 SizedBox(
                   height: height * 0.3,
                   width: width,
@@ -111,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                           child: Text(
                             'Sign In',
                             style: AppStyless.styleBold20.copyWith(
-                              fontSize: width * 0.06, // الخط يتغير مع العرض
+                              fontSize: width * 0.06, 
                             ),
                           ),
                         ),

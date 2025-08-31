@@ -51,7 +51,6 @@ class _AddProductPageState extends State<AddProductPage> {
     });
 
     try {
-      // 🟢 رفع الصورة على imgbb
       final imageUrl =
           await ImageUploadService().uploadImageToImgbb(selectedImage!);
 
@@ -59,7 +58,6 @@ class _AddProductPageState extends State<AddProductPage> {
         throw "Image upload failed";
       }
 
-      // 🔵 حفظ المنتج في Collection على حسب اسم الـ Category
       await DatabaseMethods().addProduct({
         "name": name.text,
         "category": selectedCategory,

@@ -5,23 +5,21 @@ class SharedPreferencesHelper {
   static String userNameKey = 'USERNAMEKEY';
   static String userEmailKey = 'USEREMAILKEY';
   static String userImageKey = 'USERIMAGEKEY';
-static String isFirstTimeKey = 'ISFIRSTTIMEKEY';
+  static String isFirstTimeKey = 'ISFIRSTTIMEKEY';
   static String isLoggedInKey = 'ISLOGGEDINKEY';
   static String isAdminLoggedInKey = 'ISADMINLOGGEDINKEY';
 
-
- Future<void> clearAll() async {
+  Future<void> clearAll() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
   }
 
- // 🔹 Admin
   Future<bool> saveIsAdminLoggedIn(bool value) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     return pref.setBool(isAdminLoggedInKey, value);
   }
 
-    Future<bool?> getIsAdminLoggedIn() async {
+  Future<bool?> getIsAdminLoggedIn() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     return pref.getBool(isAdminLoggedInKey);
   }
@@ -41,7 +39,6 @@ static String isFirstTimeKey = 'ISFIRSTTIMEKEY';
     return pref.getBool(isFirstTimeKey);
   }
 
-  // حفظ حالة اللوجين
   Future<bool> saveIsLoggedIn(bool value) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     return pref.setBool(isLoggedInKey, value);
@@ -52,7 +49,6 @@ static String isFirstTimeKey = 'ISFIRSTTIMEKEY';
     return pref.getBool(isLoggedInKey);
   }
 
-  // مسح البيانات عند تسجيل الخروج
   Future<void> clearPrefs() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     await pref.clear();
@@ -97,6 +93,4 @@ static String isFirstTimeKey = 'ISFIRSTTIMEKEY';
     SharedPreferences pref = await SharedPreferences.getInstance();
     return pref.getString(userImageKey);
   }
-
-  
 }

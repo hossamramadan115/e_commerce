@@ -18,15 +18,15 @@ class AdminButton extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15), // تأثير الزجاج
+          filter: ImageFilter.blur(sigmaX: 15, sigmaY: 15), 
           child: Container(
-            width: width * 0.2, // أصغر من الأول
+            width: width * 0.2, 
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
             decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.15), // شفاف زي الزجاج
+              color: Colors.white.withOpacity(0.15), 
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
-                color: Colors.white.withOpacity(0.3), // حدود خفيفة شفافة
+                color: Colors.white.withOpacity(0.3), 
                 width: 1.5,
               ),
               boxShadow: [

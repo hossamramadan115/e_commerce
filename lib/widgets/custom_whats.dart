@@ -26,7 +26,7 @@ class CustomWhats extends StatelessWidget {
       icon: FontAwesomeIcons.whatsapp,
       iconColor: Colors.green,
       title: "Contact via WhatsApp",
-      onTap: _openWhatsApp, // 👈 استدعاء الدالة هنا
+      onTap: _openWhatsApp,
     );
   }
 }

@@ -4,7 +4,6 @@ class DatabaseMethods {
   final CollectionReference usersCollection =
       FirebaseFirestore.instance.collection("users");
 
-  // 🟢 إضافة بيانات المستخدم
   Future<void> addUserDetails(
       Map<String, dynamic> userInfoMap, String id) async {
     try {
@@ -84,7 +83,6 @@ Future<DocumentSnapshot?> getUserByEmail(String email) async {
     }
   }
 
-  // 🟢 تجيب الأوردرات كـ Stream
 Stream<QuerySnapshot> getOrders(String? email) {
   try {
     if (email == null) {
@@ -93,14 +91,13 @@ Stream<QuerySnapshot> getOrders(String? email) {
 
     return FirebaseFirestore.instance
         .collection("Orders")
-        .where("Email", isEqualTo: email) // 🟢 فلترة بالأيميل اللي جاي من SharedPreferences
+        .where("Email", isEqualTo: email)
         .snapshots();
   } catch (e) {
     throw "Error fetching orders: $e";
   }
 }
 
-  // 🟢 تجيب كل الأوردرات (للأدمن)
   Stream<QuerySnapshot> getAllOrders() {
     try {
       return FirebaseFirestore.instance
@@ -112,7 +109,6 @@ Stream<QuerySnapshot> getOrders(String? email) {
     }
   }
 
-  // 🟢 تحديث حالة الأوردر
   Future<void> updateOrderStatus(String orderId, String newStatus) async {
     try {
       await FirebaseFirestore.instance

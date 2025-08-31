@@ -34,7 +34,7 @@ class CustomCategoryTile extends StatelessWidget {
           GestureDetector(
             onTap: () {
               GoRouter.of(context).push(
-                "${AppRouter.kSameCategories}/$name", // 🟢 ابعت اسم الكاتيجوري هنا
+                "${AppRouter.kSameCategories}/$name", 
               );
             },
             child: Icon(

@@ -19,7 +19,6 @@ class AuthService {
 
       await userCredential.user!.updateDisplayName(name);
 
-      // ✅ بدال ما تكتب Firestore مباشر، استخدم DatabaseMethods
       await DatabaseMethods().addUserDetails({
         'id': id,
         'name': name,
